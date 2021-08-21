@@ -42,7 +42,7 @@ class DeepApp extends StatelessWidget {
                 ),
               ),
               Row(
-                children: [Icon(Icons.car_repair), Icon(Icons.ac_unit)],
+                children: [Icon(Icons.car_repair, size: 50.5,color: Colors.pink,), Icon(Icons.ac_unit, size: 78.1, color: Colors.blueGrey[500],)],
               )
             ],
           ),
