@@ -19,7 +19,9 @@ class DeepApp extends StatelessWidget {
         body: SafeArea(
           child: Container(
             margin: EdgeInsets.all(50.0),
-            child: Column(children: [
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
               Text("Look into the Deep"),
               Container(
                 height: 300,
