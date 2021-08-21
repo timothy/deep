@@ -16,9 +16,11 @@ class DeepApp extends StatelessWidget {
             title: Text("Deep waves"),
             backgroundColor: Colors.deepOrange[900],
           ),
-          body: Center(
-            child: Image(
-              image: AssetImage('images/83606.jpg'),
+          body: SafeArea(
+            child: Center(
+              child: Image(
+                image: AssetImage('images/83606.jpg'),
+              ),
             ),
           )),
     );
