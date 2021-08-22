@@ -61,20 +61,28 @@ class DeepApp extends StatelessWidget {
   }
 }
 
-class SnackBarIcon extends StatelessWidget {
-  const SnackBarIcon({Key? key}) : super(key: key);
+class SnackBarIcon extends StatefulWidget {
+   SnackBarIcon({Key? key}) : super(key: key);
+
+  @override
+  _SnackBarIconState createState() => _SnackBarIconState();
+}
+
+class _SnackBarIconState extends State<SnackBarIcon> {
+  var btnHits = 0;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
         onPressed: () {
+          btnHits = btnHits + 1;
           final snackBar = SnackBar(
-            content: const Text('Yay! A SnackBar!'),
+            content:  Text('Yay! A SnackBar has showed $btnHits times'),
             action: SnackBarAction(
               label: 'Undo',
               onPressed: () {
-                // Some code to undo the change.
+                btnHits = btnHits -1;
               },
             ),
           );
