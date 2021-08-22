@@ -26,7 +26,9 @@ class DeepApp extends StatelessWidget {
                 child: Text(
                   "Look into the Deep",
                   style: TextStyle(
-                      color: Colors.pinkAccent, fontWeight: FontWeight.bold, fontSize: 20),
+                      color: Colors.pinkAccent,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
                 ),
                 color: Colors.black54,
               ),
@@ -42,11 +44,50 @@ class DeepApp extends StatelessWidget {
                 ),
               ),
               Row(
-                children: [Icon(Icons.car_repair, size: 50.5,color: Colors.pink,), Icon(Icons.ac_unit, size: 78.1, color: Colors.blueGrey[500],)],
+                children: [
+                  Icon(
+                    Icons.car_repair,
+                    size: 50.5,
+                    color: Colors.pink,
+                  ),
+                  SnackBarIcon()
+                ],
               )
             ],
           ),
         )),
+      ),
+    );
+  }
+}
+
+class SnackBarIcon extends StatelessWidget {
+  const SnackBarIcon({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {
+          final snackBar = SnackBar(
+            content: const Text('Yay! A SnackBar!'),
+            action: SnackBarAction(
+              label: 'Undo',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          );
+
+          // Find the ScaffoldMessenger in the widget tree
+          // and use it to show a SnackBar.
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+        child: Icon(
+          Icons.ac_unit,
+          size: 78.1,
+          color: Colors.blueGrey[500],
+        ),
       ),
     );
   }
