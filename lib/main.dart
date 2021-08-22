@@ -69,10 +69,9 @@ class SnackBarIcon extends StatefulWidget {
 }
 
 class _SnackBarIconState extends State<SnackBarIcon> {
-  var btnHits = 0;
-
   @override
   Widget build(BuildContext context) {
+    var btnHits = 0;
     return Center(
       child: ElevatedButton(
         onPressed: () {
